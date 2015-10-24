@@ -1,24 +1,24 @@
 <template name='studentsShow'>
   <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-12">
         <h2>{{name}} <span class="thin"> Student @ Super Sekolah </span></h2>
         <p class="concern-text"> This student is in a high-risk area. Funding & Tutoring them will have a halo effect for the area. </p>
       </div><!-- col -->
     </div><!-- row -->
 
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="project-thumbnail pt-med" style="background: url({{thumbnailUrl}}) no-repeat center center;  background-size: cover; ">
         </div>
         <br/>
       </div><!-- col -->
       <div class="col-md-4">
         {{>tutorForm}}
-      </div>
+      </div><!-- col -->
     </div><!-- row -->
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-8">
         <h3>Student Profile</h3>
         <hr/>
         <div class="project-story">
@@ -42,7 +42,7 @@
         <div class="project-thumbnail" style="background: url(https://upload.wikimedia.org/wikipedia/id/thumb/d/df/Lokasi_Jawa_Barat_Indonesia.svg/1600px-Lokasi_Jawa_Barat_Indonesia.svg.png) no-repeat center center;  background-size: cover; border: 1px solid rgb(238, 238, 238);"></div>
       </div><!-- col -->
       <div class="col-md-4">
-
+        {{>incentiveForm}}
       </div><!-- col -->
     </div><!-- row -->
   </div><!-- container -->
