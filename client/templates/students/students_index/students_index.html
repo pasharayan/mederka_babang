@@ -1,9 +1,19 @@
 <template name='studentsIndex'>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        
-      </div>
-    </div>
-  </div>
+      <div class="col-md-4">
+        <h2>Students Index</h2>
+      </div><!-- col -->
+    </div><!-- row -->
+
+    <div class="row">
+      {{#each this}}
+        <a href="{{pathFor 'studentsShow'}}">
+          <div class="col-md-4">
+            {{>studentPanel}}
+          </div><!-- col -->
+        </a>
+      {{/each}}
+    </div><!-- row -->
+  </div><!-- container -->
 </template>
