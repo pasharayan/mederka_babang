@@ -1,5 +1,9 @@
 @import 'colors.css.scss';
 
+h1, h2, h3, h4, h5 {
+  font-weight: 900;
+}
+
 /** Modifications to Bootstrap  **/
 .navbar {
   margin: 0;
@@ -11,4 +15,8 @@
   a {
     color: $text-grey;
   }
+}
+
+.concern-text {
+  color: $indonesian-red;
 }

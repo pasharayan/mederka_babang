@@ -1,11 +1,19 @@
 @import 'colors.css.scss';
+@import 'mixins.css.scss';
 
 .milestone {
-  padding: 20px;
-  //border: 1px solid $dark-green;
-  color: $dark-green;
+  @include bg-transition-ease;
+
   background-color: $light-green;
+  color: $dark-green;
+  margin-bottom: 20px;
+  padding: 20px;
+
   p {
     font-size: 0.9em;
   }
+}
+
+.milestone:hover {
+  background-color: $hover-light-green;
 }

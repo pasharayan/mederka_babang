@@ -5,3 +5,12 @@
   line-height: 1.9em;
   color: $text-grey;
 }
+
+.tagline-area {
+  background-color: rgba(0, 0, 0, .7);
+  bottom: 0;
+  color: rgba(255, 255, 255, .9);
+  padding: 20px;
+  position: absolute;
+  width: 100%;
+}

@@ -1,0 +1,25 @@
+@import 'colors.css.scss';
+@import 'mixins.css.scss';
+
+.donate-form {
+  color: white;
+  text-align: center;
+
+  input {
+    font-size: 1.4em;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .submit-form {
+    @include bg-transition-ease;
+    background-color: $dark-green;
+    font-size: 1.4em;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .submit-form:hover {
+    background-color: $hover-dark-green;
+  }
+}
