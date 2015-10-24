@@ -17,13 +17,9 @@ Template.projectsNew.events({
     };
 
 
-
     var projectId = Projects.insert(data);
     Router.go('projectsShow', {_id: projectId});
-
-
   }
-
 });
 
 Template.projectsNew.created = function(){

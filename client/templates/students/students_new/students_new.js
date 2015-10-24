@@ -11,13 +11,14 @@ Template.studentsNew.events({
       story: $(e.target).find('[name=story]').val(),
       thumbnailUrl: $(e.target).find('[name=thumbnailUrl]').val(),
       teacherComment: $(e.target).find('[name=teacher]').val(),
-      previousAchievements: $(e.target).find('[name=previousAchievements]').val(),
+      previousAchievements: $(e.target).find('[name=previousachievements]').val(),
       latitude: $(e.target).find('[name=latitude]').val(),
       longitude: $(e.target).find('[name=longitude]').val(),
     };
 
-    console.log(data);
-
+    //console.log(data);
+    var studentId = Students.insert(data);
+    Router.go('studentsShow', {_id: studentId});
   }
 
 });
