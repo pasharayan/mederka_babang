@@ -1,0 +1,11 @@
+@import 'colors.css.scss';
+
+.milestone {
+  padding: 20px;
+  //border: 1px solid $dark-green;
+  color: $dark-green;
+  background-color: $light-green;
+  p {
+    font-size: 0.9em;
+  }
+}
