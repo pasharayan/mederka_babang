@@ -9,7 +9,13 @@ Template.heatmap.helpers({
       center: this.options.center || new google.maps.LatLng(-3.0926415 , 115.2837585),
       zoom: this.options.zoom || 5,
       zoomable: (this.options.zoomable === false) ? false : true,
-      scrollWheel: (this.options.scrollWheel === false) ? false : true,
+      scrollWheel: false,
+      zoomControl: false,
+      navigationControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      draggable: false,
+      disableDoubleClickZoom: true,
     };
 
     return options;

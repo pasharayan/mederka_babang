@@ -2,9 +2,14 @@ Template.homepage.helpers({
   mapOptions: function() {
     var options = {
       width: '100%',
-      height: '700px',
+      height: '420px',
       zoomable: false,
+      zoomControl: false,
       scrollWheel: false,
+      navigationControl: false,
+      mapTypeControl: false,
+      scaleControl: false,
+      draggable: false,
     };
     return options;
   },

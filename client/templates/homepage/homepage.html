@@ -1,27 +1,68 @@
 <template name="homepage">
+
+  <div class="top-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <h1>Lihat dimana anak putus sekolah di Indonesia</h1>
+            <div class="thin-title"> and fund students, schools, projects, tutors & mentors to help solve the root causes</div>
+            <br/>
+            <div class="row">
+              <div class="col-md-offset-4 col-md-4">
+                <a href="{{pathFor 'projectsIndex'}}"><div class="submit-form "> Donate </div></a>
+              </div>
+            </div>
+          <br/>
+        </div><!-- col -->
+      </div><!-- row -->
+    </div><!-- container -->
+  </div>
+
+
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
-        {{> heatmap options=mapOptions points=mapPoints markers=mapMarkers}}
+      <div class="col-md-4">
+
+      </div>
+
+      <div class="col-md-8">
+        <br/>
+        <div class="map-wrapper">
+
+          <br/>
+        </div>
         <br/>
       </div><!-- col -->
     </div><!-- row -->
+  </div><!-- container -->
 
+
+
+
+  <div class="container">
     <div class="row">
-      {{#each students}}
-        <a href="{{pathFor 'studentsShow'}}">
-          <div class="col-md-4">
-            {{>studentPanel}}
-          </div><!-- col -->
-        </a>
-      {{/each}}
-      {{#each projects}}
-        <a href="{{pathFor 'projectsShow'}}">
-          <div class="col-md-4">
-            {{> projectPanel}}
-          </div><!-- col -->
-        </a>
-      {{/each}}
+      <div class="col-md-8">
+        {{> heatmap options=mapOptions points=mapPoints markers=mapMarkers}}
+        <h4> We use data science to learn where anak putus sekolah </h4>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          {{#each students}}
+            <a href="{{pathFor 'studentsShow'}}">
+              <div class="col-md-6">
+                {{>studentPanel}}
+              </div><!-- col -->
+            </a>
+          {{/each}}
+          {{#each projects}}
+            <a href="{{pathFor 'projectsShow'}}">
+              <div class="col-md-6">
+                {{> projectPanel}}
+              </div><!-- col -->
+            </a>
+          {{/each}}
+        </div>
+      </div>
     </div><!-- row -->
   </div><!-- container -->
 </template>
