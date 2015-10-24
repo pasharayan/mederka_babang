@@ -1,3 +1,16 @@
 <template name='projectsIndex'>
- 
+  <div class="container">
+    <div class="row">
+      <div clsas="col-md-12">
+        Projects Index
+      </div><!-- col -->
+    </div><!-- row -->
+    <div class="row">
+      {{#each this}}
+        <div class="col-md-4">
+          {{>projectPanel}}
+        </div><!-- col -->
+      {{/each}}
+    </div><!-- row -->
+  </div><!-- container -->
 </template>
