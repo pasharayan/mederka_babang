@@ -8,7 +8,7 @@ Template.studentsNew.events({
 
     var data = {
       name: $(e.target).find('[name=name]').val(),
-      story: $(e.target).find('[name=story]').val(),
+      sekolah: $(e.target).find('[name=sekolah]').val(),
       thumbnailUrl: $(e.target).find('[name=thumbnailUrl]').val(),
       teacherComment: $(e.target).find('[name=teacher]').val(),
       previousAchievements: $(e.target).find('[name=previousachievements]').val(),
