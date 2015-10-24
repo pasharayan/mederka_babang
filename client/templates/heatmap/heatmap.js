@@ -16,16 +16,31 @@ Template.heatmap.onRendered(function() {
   var template = this;
 
   GoogleMaps.ready('heatmap', function(map) {
+    // Test map with marker
     var marker = new google.maps.Marker({
       position: map.options.center,
       map: map.instance
     });
 
+    // Initialize heatmap with initial data points from Template data parameter
     var heatmap = new google.maps.visualization.HeatmapLayer({
       data: _.map(template.data.options.points, (item) => { 
-        return new google.maps.LatLng(item.lat, item.lng);
+        return {
+          location: new google.maps.LatLng(item.lat, item.lng),
+          weight: (item.weight) ? item.weight : 1,
+        };
       }),
-      map: map.instance
+      map: map.instance,
+      radius: 50,
     });
+
+    var data = _.map(template.data.options.points, (item) => {
+      return {
+        location: new google.maps.LatLng(item.lat, item.lng),
+        weight: (item.weight) ? item.weight : 1,
+      };
+    });
+    console.log(data);
+    heatmap.setData(data);
   });
 });
