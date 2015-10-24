@@ -16,6 +16,8 @@ Template.studentsNew.events({
       longitude: $(e.target).find('[name=longitude]').val(),
     };
 
+    console.log(data);
+
   }
 
 });
