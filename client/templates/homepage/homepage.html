@@ -8,6 +8,13 @@
     </div><!-- row -->
 
     <div class="row">
+      {{#each students}}
+        <a href="{{pathFor 'studentsShow'}}">
+          <div class="col-md-4">
+            {{>studentPanel}}
+          </div><!-- col -->
+        </a>
+      {{/each}}
       {{#each projects}}
         <a href="{{pathFor 'projectsShow'}}">
           <div class="col-md-4">
