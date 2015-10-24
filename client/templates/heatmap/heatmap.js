@@ -40,7 +40,7 @@ Template.heatmap.onRendered(function() {
         weight: (item.weight) ? item.weight : 1,
       };
     });
-    console.log(data);
+    //console.log(data);
     heatmap.setData(data);
   });
 });

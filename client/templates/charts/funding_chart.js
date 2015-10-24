@@ -2,6 +2,9 @@ Template.fundingChart.rendered = function () {
   Session.set('x', ['x', 30, 50, 75, 100, 120]);
   Session.set('data1', ['data1', 30, 200, 100, 400, 150]);
   Session.set('data2', ['data2', 20, 180, 240, 100, 190]);
+
+  Session.get('goal', this.data.goal);
+
   var chart = c3.generate({
     bindto: this.find('#fundingChart'),
       data: {
@@ -23,4 +26,4 @@ Template.fundingChart.rendered = function () {
       []
     ]});
   });
-}
+};
