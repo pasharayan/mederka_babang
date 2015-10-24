@@ -1,5 +1,14 @@
 Template.testAlbert.helpers({
   mapOptions: function() {
+    var options = {
+      width: '1400px', 
+      height: '700px',
+      center: {lat: -3.0926415 , lng: 115.2837585},
+      zoom: 5,
+    };
+    return options;
+  },
+  mapPoints: function() {
     var text = TextFiles.findOne().text.split(/\n/);
     var points = [];
     var splitted= '';
@@ -11,12 +20,9 @@ Template.testAlbert.helpers({
         weight: Number(splitted[1]) 
       });
     }
-    var options = {
-      width: '1400px', 
-      height: '700px',
-      points: points
-    };
-    console.log(points);
-    return options;
+    return points;
   },
+  mapMarkers: function() {
+
+  }
 });

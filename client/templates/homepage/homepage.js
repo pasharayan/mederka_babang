@@ -1,5 +1,12 @@
 Template.homepage.helpers({
   mapOptions: function() {
+    var options = {
+      width: '100%',
+      height: '700px',
+    };
+    return options;
+  },
+  mapPoints: function() {
     var text = TextFiles.findOne().text.split(/\n/);
     var points = [];
     var splitted= '';
@@ -11,13 +18,14 @@ Template.homepage.helpers({
         weight: Number(splitted[1])
       });
     }
-    var options = {
-      width: '100%',
-      height: '700px',
-      points: points
-    };
-    console.log(points);
-    return options;
+    return points;
   },
-
+  mapMarkers: function() {
+    var projects = Projects.find({}).fetch();
+    var locations = _.map(projects, function(item) {
+      if (!item.latitude || !item.longitude) return undefined;
+      return {lat: item.latitude, lng: item.longitude};
+    });
+    return _.filter(locations, function(item) {return item !== undefined;});
+  },
 });
