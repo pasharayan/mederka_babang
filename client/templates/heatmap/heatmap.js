@@ -2,10 +2,10 @@ Template.heatmap.helpers({
   heatmapOptions: function() {
     // IF google maps not loaded yet, do nothing
     if (!GoogleMaps.loaded()) return;
-    
+
     var options = {
-      center: new google.maps.LatLng(-6.121435 , 106.774124),
-      zoom: 8,
+      center: new google.maps.LatLng(-3.0926415 , 115.2837585),
+      zoom: 5,
     };
 
     return options;
@@ -24,7 +24,7 @@ Template.heatmap.onRendered(function() {
 
     // Initialize heatmap with initial data points from Template data parameter
     var heatmap = new google.maps.visualization.HeatmapLayer({
-      data: _.map(template.data.options.points, (item) => { 
+      data: _.map(template.data.options.points, (item) => {
         return {
           location: new google.maps.LatLng(item.lat, item.lng),
           weight: (item.weight) ? item.weight : 1,
