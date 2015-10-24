@@ -12,7 +12,7 @@ Template.projectsNew.events({
       tagline: $(e.target).find('[name=tagline]').val(),
       story: $(e.target).find('[name=story]').val(),
       latitude: $(e.target).find('[name=latitude]').val(),
-      longitutde: $(e.target).find('[name=longitude]').val(),
+      longitude: $(e.target).find('[name=longitude]').val(),
       goal: $(e.target).find('[name=goal]').val(),
     };
 
