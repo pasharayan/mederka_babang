@@ -42,14 +42,27 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <div class="info-area">
-
+        <div class="center">
+          <h2>Heatmap untuk dimana anak putus sekolah di Indonesia dari data (From government)</h2>
+          <br/>
+        </div>
+        {{> heatmap options=mapOptions points=mapPoints markers=mapMarkers}}
+        <br/>
+        <div class="info-area" style="text-align: center">
+          <img src="/explain.png" height="160">
         </div>
 
-        {{> heatmap options=mapOptions points=mapPoints markers=mapMarkers}}
-        <h4> We use data science to learn where anak putus sekolah </h4>
+        <hr />
+        {{#each projects}}
+          <a href="{{pathFor 'projectsShow'}}">
+            <div class="col-md-6">
+              {{> projectPanel}}
+            </div><!-- col -->
+          </a>
+        {{/each}}
+
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 homepage">
         <div class="row">
           {{#each students}}
             <a href="{{pathFor 'studentsShow'}}">
@@ -58,13 +71,7 @@
               </div><!-- col -->
             </a>
           {{/each}}
-          {{#each projects}}
-            <a href="{{pathFor 'projectsShow'}}">
-              <div class="col-md-6">
-                {{> projectPanel}}
-              </div><!-- col -->
-            </a>
-          {{/each}}
+
         </div>
       </div>
     </div><!-- row -->
