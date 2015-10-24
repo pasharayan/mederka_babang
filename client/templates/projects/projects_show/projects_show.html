@@ -1,3 +1,20 @@
 <template name='projectsShow'>
-  ProjectShow: {{name}}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>{{name}}</h2>
+        <div class="project-thumbnail" style="background: url({{thumbnailUrl}}) no-repeat center center;  background-size: cover; ">
+        </div>
+        <br/>
+        Project Story
+        <hr/>
+        {{story}}
+      </div><!-- col -->
+      <div class="col-md-4">
+
+
+      </div>
+    </div><!-- row -->
+  </div><!-- container -->
+
 </template>
