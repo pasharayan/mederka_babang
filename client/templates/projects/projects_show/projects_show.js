@@ -1,5 +1,15 @@
 Template.projectsShow.helpers({
   heatmapOptions: function() {
+    var options = {
+      width: '100%', 
+      height: '100%',
+      //center: new google.maps.LatLng(this.projects.latitude, this.projects.longitude),
+      zoom: 6,
+    };
+    return options;
+  },
+
+  heatmapPoints: function() {
     var text = TextFiles.findOne().text.split(/\n/);
     var points = [];
     var splitted= '';
@@ -11,18 +21,8 @@ Template.projectsShow.helpers({
         weight: Number(splitted[1]) 
       });
     }
-
-    var options = {
-      width: '100%', 
-      height: '100%',
-      points: points,
-      mapOptions: {
-        zoom: 6,
-      }
-    };
-
-    return options;
-  },
+    return points;
+  }
 });
 
 Template.projectsShow.events({

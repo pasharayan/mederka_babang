@@ -1,5 +1,12 @@
 Template.homepage.helpers({
   mapOptions: function() {
+    var options = {
+      width: '100%',
+      height: '700px',
+    };
+    return options;
+  },
+  mapPoints: function() {
     var text = TextFiles.findOne().text.split(/\n/);
     var points = [];
     var splitted= '';
@@ -11,13 +18,6 @@ Template.homepage.helpers({
         weight: Number(splitted[1])
       });
     }
-    var options = {
-      width: '100%',
-      height: '700px',
-      points: points
-    };
-    console.log(points);
-    return options;
-  },
-
+    return points;
+  }
 });
