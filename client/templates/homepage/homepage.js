@@ -19,5 +19,13 @@ Template.homepage.helpers({
       });
     }
     return points;
-  }
+  },
+  mapMarkers: function() {
+    var projects = Projects.find({}).fetch();
+    var locations = _.map(projects, function(item) {
+      if (!item.latitude || !item.longitude) return undefined;
+      return {lat: item.latitude, lng: item.longitude};
+    });
+    return _.filter(locations, function(item) {return item !== undefined;});
+  },
 });

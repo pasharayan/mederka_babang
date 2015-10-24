@@ -19,12 +19,13 @@ Template.heatmap.onRendered(function() {
 
   GoogleMaps.ready('heatmap', function(map) {
     // Test map with marker
-    for (var i = 0; i < template.data.markers; i++) {
-      new google.maps.Marker({
-        position: template.data.markers[0],
+    _.each(template.data.markers, function(item) {
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(item.lat, item.lng),
         map: map.instance,
       });
-    }
+    });
+    console.log(template.data.markers);
 
     // Initialize heatmap with initial data points from Template data parameter
     var heatmap = new google.maps.visualization.HeatmapLayer({
