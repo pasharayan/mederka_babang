@@ -4,8 +4,8 @@ Template.heatmap.helpers({
     if (!GoogleMaps.loaded()) return;
 
     var options = {
-      center: new google.maps.LatLng(-3.0926415 , 115.2837585),
-      zoom: 5,
+      center: this.options.mapOptions.center || new google.maps.LatLng(-3.0926415 , 115.2837585),
+      zoom: this.options.mapOptions.zoom || 5,
     };
 
     return options;
