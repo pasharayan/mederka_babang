@@ -25,7 +25,6 @@ Template.heatmap.onRendered(function() {
         map: map.instance,
       });
     });
-    console.log(template.data.markers);
 
     // Initialize heatmap with initial data points from Template data parameter
     var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -37,13 +36,6 @@ Template.heatmap.onRendered(function() {
       }),
       map: map.instance,
       radius: 50,
-    });
-
-    var data = _.map(template.data.options.points, (item) => {
-      return {
-        location: new google.maps.LatLng(item.lat, item.lng),
-        weight: (item.weight) ? item.weight : 1,
-      };
     });
   });
 });

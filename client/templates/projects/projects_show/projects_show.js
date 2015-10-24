@@ -1,10 +1,11 @@
 Template.projectsShow.helpers({
   heatmapOptions: function() {
+    if (!GoogleMaps.loaded()) return;
     var options = {
       width: '100%', 
       height: '100%',
-      //center: new google.maps.LatLng(this.projects.latitude, this.projects.longitude),
-      zoom: 6,
+      center: {lat: this.latitude, lng: this.longitude},
+      zoom: 5,
     };
     return options;
   },
@@ -22,6 +23,10 @@ Template.projectsShow.helpers({
       });
     }
     return points;
+  },
+  heatmapMarkers: function() {
+    var item = this;
+    return [{lat: item.latitude, lng: item.longitude}];
   }
 });
 
