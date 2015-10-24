@@ -1,20 +1,52 @@
 <template name='projectsShow'>
   <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <h2>{{name}}</h2>
-        <div class="project-thumbnail" style="background: url({{thumbnailUrl}}) no-repeat center center;  background-size: cover; ">
+      <div class="col-md-12">
+          <h2>{{name}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+        <div class="project-thumbnail pt-large" style="background: url({{thumbnailUrl}}) no-repeat center center;  background-size: cover; ">
         </div>
         <br/>
-        Project Story
-        <hr/>
-        {{story}}
       </div><!-- col -->
-      <div class="col-md-4">
-
-
+      <div class="col-md-5">
+        {{> fundingChart}}
       </div>
     </div><!-- row -->
+    <div class="row">
+      <div class="col-md-7">
+        <h3>Project Story</h3>
+        <hr/>
+        <div class="project-story">
+          {{story}}
+          Dummy data:
+          <p>
+          Seperti kita ketahui, beberapa bulan ini kabut asap yang disebabkan kebakaran lahan dan hutan mengganggu aktivitas teman-teman kita di beberapa wilayah di Indonesia, sebut saja Riau, Sumatera, dan Kalimantan. Faktanya asap ini tidak hanya mengganggu aktivitas namun juga menelan korban jiwa
+          </p>
+
+          <br/>
+          Per hari ini, korban terus bertambah dan masih sangat banyak anak-anak yang terpapar kabut asap dua puluh empat jam sehari sementara hujan hanya turun sekadarnya dan asap pekat terus bergulung.
+
+          Berdasarkan kepedulian akan masalah ini, saya mengajak kita semua untuk bergerak mengumpulkan dana untuk saudara-saudara kita.
+
+          100% dana yang terkumpul akan digunakan untuk membeli masker dan kaleng oksigen tambahan yang akan didistribusikan ke korban.
+        </div>
+        <br/>
+        <br/>
+        <h3> Region: </h3>
+        <hr/>
+        <div class="project-thumbnail" style="background: url(https://upload.wikimedia.org/wikipedia/id/thumb/d/df/Lokasi_Jawa_Barat_Indonesia.svg/1600px-Lokasi_Jawa_Barat_Indonesia.svg.png) no-repeat center center;  background-size: cover; border: 1px solid rgb(238, 238, 238);"></div>
+      </div><!-- col -->
+      <div class="col-md-5">
+        <h3>Milestones:</h3>
+        <hr/>
+        <div class="milestone">
+        </div>
+      </div><!-- col -->
+    </div><!-- row -->
+
   </div><!-- container -->
 
 </template>

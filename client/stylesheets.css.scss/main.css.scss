@@ -3,4 +3,12 @@
 /** Modifications to Bootstrap  **/
 .navbar {
   margin: 0;
+  padding: 30px 0 15px;
+
+}
+
+.navbar-simple {
+  a {
+    color: $text-grey;
+  }
 }
