@@ -12,8 +12,8 @@ Template.studentsNew.events({
       thumbnailUrl: $(e.target).find('[name=thumbnailUrl]').val(),
       teacherComment: $(e.target).find('[name=teacher]').val(),
       previousAchievements: $(e.target).find('[name=previousachievements]').val(),
-      latitude: $(e.target).find('[name=latitude]').val(),
-      longitude: $(e.target).find('[name=longitude]').val(),
+      latitude: Number($(e.target).find('[name=latitude]').val()),
+      longitude: Number($(e.target).find('[name=longitude]').val()),
     };
 
     //console.log(data);

@@ -3,6 +3,8 @@ Template.homepage.helpers({
     var options = {
       width: '100%',
       height: '700px',
+      zoomable: false,
+      scrollWheel: false,
     };
     return options;
   },

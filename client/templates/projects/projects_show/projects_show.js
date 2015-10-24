@@ -4,7 +4,7 @@ Template.projectsShow.helpers({
     var options = {
       width: '100%', 
       height: '100%',
-      center: {lat: this.latitude, lng: this.longitude},
+      center: {lat: Number(this.latitude), lng: Number(this.longitude)},
       zoom: 5,
     };
     return options;
@@ -26,7 +26,7 @@ Template.projectsShow.helpers({
   },
   heatmapMarkers: function() {
     var item = this;
-    return [{lat: item.latitude, lng: item.longitude}];
+    return [{lat: Number(item.latitude), lng: Number(item.longitude)}];
   }
 });
 
