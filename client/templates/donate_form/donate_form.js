@@ -5,7 +5,7 @@ Template.donateForm.events({
     //console.log(this);
 
     var raisedValue = parseInt($(e.target).find('[name=raised]').val());
-    var raisedCurrent = parseInt(this.raised || 0);
+    var raisedCurrent = parseInt(Router.current().data().raised || 0);
 
     var updatedValue = raisedValue + raisedCurrent;
 
@@ -16,7 +16,7 @@ Template.donateForm.events({
     Projects.update(this._id, {$set: data});
 
     //Update relevant session variables for graph update
-    Session.set('data1', ['Remaining', this.goal - (updatedValue || 0)]);
+    Session.set('data1', ['Remaining', Router.current().data().goal - (updatedValue || 0)]);
     Session.set('data2', ['Raised', updatedValue]);
 
   }

@@ -1,7 +1,7 @@
 Template.fundingChart.rendered = function () {
 
-  Session.set('data1', ['Remaining', this.data.goal - (this.data.raised || 0)]);
-  Session.set('data2', ['Raised', this.data.raised]);
+  Session.set('data1', ['Remaining', Router.current().data().goal - (Router.current().data().raised || 0)]);
+  Session.set('data2', ['Raised', Router.current().data().raised]);
 
   var chart = c3.generate({
     bindto: this.find('#fundingChart'),
@@ -17,6 +17,12 @@ Template.fundingChart.rendered = function () {
   });
 
   Tracker.autorun(function () {
+    var data = Router.current().data();
+
+    Session.set('data1', ['Remaining', Router.current().data().goal - (Router.current().data().raised || 0)]);
+    Session.set('data2', ['Raised', Router.current().data().raised]);
+
+    console.log(data);
     chart.load({columns: [
       Session.get('data1'),
       Session.get('data2'),
